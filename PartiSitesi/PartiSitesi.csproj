@@ -8,6 +8,10 @@
     <PackageReference Include="Npgsql" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\images\logo.png" />
+  </ItemGroup>
+
 
 
 </Project>
