@@ -8,7 +8,7 @@ namespace PartiSitesi.Model.HelperClass
 {
     public class DBManager
     {
-        private static readonly string connString  = "Host=localhost;Username=postgres;Password=12345;Database=political_party_db";
+        private static readonly string connString  = "Host=localhost;Username=postgres;Password=12345;Database=political_website_db";
         public static NpgsqlConnection GetConnection()
         {
             NpgsqlConnection connection = new NpgsqlConnection(connString);
