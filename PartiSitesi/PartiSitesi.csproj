@@ -8,4 +8,10 @@
     <PackageReference Include="Npgsql" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Communcaiton\" />
+  </ItemGroup>
+
+
+
 </Project>
