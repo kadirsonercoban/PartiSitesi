@@ -1,97 +1,30 @@
-﻿@{
-    Layout = "~/Views/Shared/Header.cshtml";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/header.css" type="text/css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="~/css/slider.css" />
-    <link rel="stylesheet" href="~/css/news.css" />
-    <link rel="stylesheet" href="~/css/modal.css" />
-    <title>Document</title>
+    <title>Haber Ekle</title>
+    <link rel="stylesheet" href="~/css/newsAdd.css"> <!-- Stilleri ayarlamak için bir CSS dosyası ekleyebilirsiniz -->
 </head>
 <body>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url('https://placekitten.com/1200/800')">
-                Slide 1
-            </div>
-            <div class="swiper-slide" style="background-image: url('https://placekitten.com/1200/800')">
-                Slide 2
-            </div>
-            <div class="swiper-slide" style="background-image: url('https://placekitten.com/1200/800')">
-                Slide 3
-            </div>
-            <!-- Daha fazla slide ekleyebilirsiniz -->
-        </div>
-        <!-- Slider Pagination (Yuvarlaklar) -->
-        <!-- Slider Navigation Düğmeleri -->
-        
+    @{
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+    }
+    <div class="container">
+        <h2>Haber Ekle</h2>
+        <form action="haber_ekle.php" method="post" enctype="multipart/form-data">
+            <label for="baslik">Başlık:</label>
+            <input type="text" id="baslik" name="baslik" required>
+
+            <label for="icerik">İçerik:</label>
+            <textarea id="icerik" name="icerik" rows="8" required></textarea>
+
+            <label for="resim">Resim:</label>
+            <input type="file" id="resim" name="resim" accept="image/*" required>
+
+            <button type="submit">Haber Ekle</button>
+        </form>
     </div>
 
-    <!-- Haber Kutuları -->
-    <!-- Haber Kutuları ve Genişletilmiş İçerik Stilleri -->
-    <div class="news-container">
-        @for (int i = 0; i < 9; i++)
-        {
-            <div class="news-box" data-news-id="@i">
-                <img src="https://placekitten.com/400/300" alt="Haber Resmi" />
-                <div class="news-title">Haber Başlığı @i</div>
-                <div class="news-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero arcu. EREN BABA EN BÜYÜKSÜN SEN EREN BABA 31 CİSİN SENN EREN BABA KRALSIN SEN EREN BABA EN BÜYÜKSÜN SEN EREN BABA 31 CİSİN SENN EREN BABA KRALSIN SEN EREN BABA EN BÜYÜKSÜN SEN EREN BABA 31 CİSİN SENN EREN BABA KRALSIN SEN</div>
-            </div>
-        }
-    </div>
-
-    <!-- Modal -->
-    <div class="modal" id="newsModal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modalContent"></div>
-        </div>
-    </div>
-
-    <!-- jQuery ve Swiper.js -->
-    
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $(".news-box").click(function () {
-                var newsId = $(this).data("news-id");
-                var newsTitle = $(this).find(".news-title").text();
-                var newsContent = $(this).find(".news-content").html();
-
-                $("#modalContent").html("<h2>" + newsTitle + "</h2>" + newsContent);
-                $("#newsModal").show();
-            });
-
-            $(".close").click(function () {
-                $("#newsModal").hide();
-            });
-        });
-    </script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            autoplay: {
-                delay: 5000, // 5 saniye
-            },
-            loop: true, // Döngü (en son slidedan en başa geçme)
-        });
-    </script>
 </body>
 </html>
