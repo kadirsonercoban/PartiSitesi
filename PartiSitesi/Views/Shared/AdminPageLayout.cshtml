@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Header.css" />
+
+    <title>Web Siteniz</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="~/images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#">Haber ekle</a></li>
+                <li><a href="#">Haber silme</a></li>
+                <li><a href="#">Teşkilat ekle</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <div class="container mt-5">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Adres: 123 Sokak, Şehir, Ülke</p>
+                <p>Telefon: +90 123 456 789</p>
+                <p>E-posta: info@example.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Hakkımızda</h3>
+                <p>Kuruluş yılı: 20XX</p>
+                <p>Misyonumuz: ...</p>
+                <p>Vizyonumuz: ...</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Linkler</h3>
+                <ul>
+                    <li><a href="/">Anasayfa</a></li>
+                    <li><a href="/hizmetler">Hizmetler</a></li>
+                    <li><a href="/urunler">Ürünler</a></li>
+                    <li><a href="/iletisim">İletişim</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <ul>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <!-- Diğer sosyal medya platformları eklenebilir -->
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
