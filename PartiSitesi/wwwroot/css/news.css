@@ -84,4 +84,9 @@
     .news-box {
         width: calc(50% - 20px); /* Mobil ekranlarda 2 sütunlu görünüm */
     }
+
+    .news-content {
+        -webkit-line-clamp: 4;
+        max-height: 70px;
+    }
 }
